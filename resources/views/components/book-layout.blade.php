@@ -35,18 +35,20 @@
 
                 <x-menu>
                     <x-slot name='item'>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{url('sach')}}">Trang chủ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('sach/theloai/1')}}">Tiểu thuyết</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('sach/theloai/2')}}">Truyện ngắn - tản văn</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('sach/theloai/3')}}">Tác phẩm kinh điển</a>
-                        </li>
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{url('sach')}}">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('sach/theloai/1')}}">Tiểu thuyết</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('sach/theloai/2')}}">Truyện ngắn - tản văn</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('sach/theloai/3')}}">Tác phẩm kinh điển</a>
+                            </li>
+                        </ul>
                     </x-slot>
                 </x-menu>
 
