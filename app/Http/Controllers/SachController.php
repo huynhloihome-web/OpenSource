@@ -27,4 +27,20 @@ class SachController extends Controller
         $title = 'Thể loại: ' . $theLoai->ten_the_loai;
         return view('index', compact('saches', 'title'));
     }
+
+     // Hiển thị chi tiết sách
+    public function show($id)
+    {
+        // Lấy thông tin sách cùng với thể loại
+        $sach = Sach::with('theLoai')->findOrFail($id);
+        $title = 'Chi tiết sách: ' . $sach->tieu_de;
+        
+        // Lấy sách cùng thể loại (không bao gồm sách hiện tại)
+        $sachCungTheLoai = Sach::where('the_loai', $sach->the_loai)
+                               ->where('id', '!=', $id)
+                               ->limit(5)
+                               ->get();
+        
+        return view('show', compact('sach', 'title', 'sachCungTheLoai'));
+    }
 }
