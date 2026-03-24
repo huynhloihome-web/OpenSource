@@ -14,3 +14,4 @@ Route::get('/', function () {
 
 Route::get('/sach', [SachController::class, 'index'])->name('sach.index');
 Route::get('/sach/theloai/{id}', [SachController::class, 'theoTheLoai'])->name('sach.theloai');
+Route::get('/sach/{id}', [SachController::class, 'show'])->name('show');
