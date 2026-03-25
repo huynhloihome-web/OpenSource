@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
     <title>{{$title}}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<head>
     <style>
         .navbar {
             background-color: #ff5850;
