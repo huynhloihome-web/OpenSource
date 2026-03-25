@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
     <title>{{$title}}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<head>
     <style>
         .navbar {
             background-color: #ff5850;
@@ -16,11 +17,32 @@
         }
         .list-book {
             display: grid;
-            grid-template-columns: repeat(4,24%);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
         .book {
-            margin: 10px;
+            margin: 0;
             text-align: center;
+        }
+        .card {
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .card-img-top {
+            padding: 10px;
+        }
+        @media (max-width: 768px) {
+            .list-book {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .list-book {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -32,7 +54,6 @@
     <main style="width:1000px; margin:2px auto;">
         <div class='row'>
             <div class='col-3 pr-0'>
-
                 <x-menu>
                     <x-slot name='item'>
                         <li class="nav-item active">
@@ -55,7 +76,7 @@
             </div>
 
             <div class='col-9'>
-                {{$slot}}
+                @yield('content')
             </div>
         </div>
     </main>
